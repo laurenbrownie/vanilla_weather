@@ -7,7 +7,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,30 +16,48 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-      <h1>Waterville</h1>
-      <ul>
-        <li>Sunday 13:10</li>
-        <li>Scattered clouds</li>
-      </ul>
-      <div class="row">
-        <div class="col-6">
-          <p id="cloudy">☁️</p>
-          35° F | 2° C
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>Waterville</h1>
+            <ul>
+              <li>Sunday 13:10</li>
+              <li>Scattered clouds</li>
+            </ul>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                    alt="clear"
+                    class="float-left"
+                  />
+                  <div class="float-left">
+                    <strong>35</strong>
+                    <span class="units">°F | <a href="#">°C</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Precipitation: 0%</li>
+                  <li>Humidity: 73%</li>
+                  <li>Wind: 2 km/h</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-6">
-          <ul>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 73%</li>
-            <li>Wind: 2 km/h</li>
-          </ul>
-        </div>
+        <small id="signature">
+          <a
+            href="https://github.com/laurenbrownie/vanilla_weather"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Lauren Brown
+        </small>
       </div>
-      </div>
-      <small>
-        <a href="" target="_blank"></a>Open-source code</a> by Lauren Brown
-      </small>
     </div>
-    <script src = "src/app.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
