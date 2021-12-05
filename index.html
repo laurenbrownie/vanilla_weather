@@ -19,10 +19,10 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1>Waterville</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Sunday 13:10</li>
-              <li>Scattered clouds</li>
+              <li id="conditions"></li>
             </ul>
             <div class="row">
               <div class="col-6">
@@ -33,16 +33,15 @@
                     class="float-left"
                   />
                   <div class="float-left">
-                    <strong>35</strong>
+                    <strong id="temperature">35</strong>
                     <span class="units">°F | <a href="#">°C</a></span>
                   </div>
                 </div>
               </div>
               <div class="col-6">
                 <ul>
-                  <li>Precipitation: 0%</li>
-                  <li>Humidity: 73%</li>
-                  <li>Wind: 2 km/h</li>
+                  <li>humidity: <span id="humidity"></span></li>
+                  <li>wind: <span id="wind"></span> mph</li>
                 </ul>
               </div>
             </div>
