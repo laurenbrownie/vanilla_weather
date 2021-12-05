@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: #878787;
+  color: #fff;
   display: block;
   font-size: 24px;
   font-weight: 100;
@@ -18,7 +18,7 @@ ul {
 
 li {
   list-style: none;
-  color: rgb(135, 135, 135);
+  color: rgb(33, 33, 33);
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -33,20 +33,27 @@ li {
 
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background: linear-gradient(
+    101.9deg,
+    rgb(253, 183, 220) 25%,
+    rgb(240, 213, 190) 38.1%,
+    rgb(249, 240, 206) 55.5%,
+    rgb(253, 244, 210) 67.3%,
+    rgb(222, 248, 226) 85.2%,
+    rgb(200, 247, 242) 103.6%
+  );
 }
 
-#cloudy {
-  font-size: 30px;
-}
 .overview {
   margin-bottom: 20px;
 }
 .weather-temperature img {
+  margin-top: 5px;
   margin-right: 10px;
   max-width: 50px;
 }
 .weather-temperature strong {
-  color: rgb(33, 33, 33);
+  color: #fff;
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
@@ -57,10 +64,31 @@ li {
   top: -34px;
 }
 
+.weather-temperature {
+  color: #fff;
+}
+
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: #fff;
   cursor: default;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.units a {
+  color: #ccf7ee;
+}
+#search-button {
+  background-color: rgb(253, 183, 220);
+  border-color: rgb(253, 183, 220);
+}
+#signature {
+  font-family: "Courier New", Courier, monospace;
+}
+#signature-link {
+  color: rgb(253, 183, 220);
+}
+#cloudy {
+  font-size: 30px;
 }

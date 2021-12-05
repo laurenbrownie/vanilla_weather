@@ -1,8 +1,10 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
+  let timeOfDay = `a.m.`;
   if (hours > 12) {
     hours = hours - 12;
+    timeOfDay = "p.m.";
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -18,7 +20,8 @@ function formatDate(timestamp) {
     "saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+
+  return `${day} at ${hours}:${minutes} ${timeOfDay}`;
 }
 
 function displayTemp(response) {
@@ -63,7 +66,7 @@ function displayCelsius(event) {
   let celsiusTemp = (fahrenheitTemperature - 32) * (5 / 9);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
-  // remove active class from Fahrenheit
+  // change classes
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
 }
@@ -72,6 +75,7 @@ function displayFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  // change classes
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
 }
@@ -87,4 +91,5 @@ celsiusLink.addEventListener("click", displayCelsius);
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 
+// default on load
 search("New York");
