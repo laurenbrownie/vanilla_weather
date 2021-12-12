@@ -35,7 +35,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class = "row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       // append a new column
@@ -68,10 +68,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "ae55b2734c25897ad68408d12d0a5fb9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -83,11 +81,6 @@ function displayTemp(response) {
   let windSpeedElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
-  let latitude = response.data.coord.lat;
-  let longitude = response.data.coord.lon;
-
-  fahrenheitTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name.toLowerCase();
@@ -114,38 +107,10 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
-
-function displayCelsius(event) {
-  event.preventDefault();
-  let celsiusTemp = (fahrenheitTemperature - 32) * (5 / 9);
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  // change classes
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-}
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  // change classes
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-let fahrenheitTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsius);
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 // default on load
 search("New York");

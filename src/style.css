@@ -29,7 +29,7 @@ li {
   margin: 30px auto;
 }
 .weather-app {
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
 
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -68,17 +68,6 @@ li {
   color: #fff;
 }
 
-.weather-temperature .active {
-  color: #fff;
-  cursor: default;
-}
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
-
-.units a {
-  color: #ccf7ee;
-}
 #search-button {
   background-color: rgb(253, 183, 220);
   border-color: rgb(253, 183, 220);
@@ -96,13 +85,17 @@ li {
   margin-top: 20px;
   text-align: center;
   color: #000;
+  border: solid 1px #fff;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
 }
 .forecast-date {
   font-size: 16px;
   opacity: 0.6;
 }
 .forecast-temperature {
-  font-size: 13px;
+  font-size: 11px;
 }
 .forecast-min {
   opacity: 0.5;
